@@ -5,6 +5,7 @@
 sh ~/.screenlayout/monitor.sh &;
 
 #Picom Configuration
+picom --config $HOME/.config/bspwm/picom.conf &
 
 #Dex Autostart
 dex -a -s /etc/xdg/autostart:~/.config/autostart/ &
@@ -18,6 +19,8 @@ nitrogen --restore &;
 # Network & Bluetooth Tray 
 nm-applet &
 blueberry-tray &
+
+# Pollybar
 
 #Keyboard Configuration
 sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
