@@ -17,11 +17,12 @@ xsetroot -cursor_name left_ptr;
 nitrogen --restore &;
 
 # Network & Bluetooth Tray 
-nm-applet &
-blueberry-tray &
+nm-applet &;
+blueberry-tray &;
 
 # Pollybar
+$HOME/.config/polybar/launch.sh &
 
 #Keyboard Configuration
-sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
+sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &;
 
