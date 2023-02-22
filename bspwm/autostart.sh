@@ -21,7 +21,7 @@ nm-applet &;
 blueberry-tray &;
 
 # Pollybar
-$HOME/.config/polybar/launch.sh &
+$HOME/.config/bspwm/polybar/launch.sh &;
 
 #Keyboard Configuration
 sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &;
