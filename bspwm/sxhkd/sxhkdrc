@@ -182,7 +182,7 @@ super + n
 
 #rofi
 super + d
-    ~/.config/bspwm/rofi/launcher.sh
+    ~/.config/bspwm/rofi/launcher.sh simple
 
 
 
