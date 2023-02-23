@@ -1,0 +1,11 @@
+bspwm
+arandr
+picom
+nitrogen
+blueberry
+polybar
+sxhkd
+xorg-xkill
+scrot
+pcmanfm
+rofi
