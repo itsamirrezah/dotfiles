@@ -61,7 +61,7 @@ ctrl + alt + o
 
 #screenshot
 super + shift + p
-    scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg'
+    sleep 0.25s && scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg'
 
 #====================================================
 #BSPWM Management
