@@ -61,7 +61,7 @@ ctrl + alt + o
 
 #screenshot
 super + shift + p
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir/Documents/p/screenshots)'
+    scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg'
 
 #====================================================
 #BSPWM Management
@@ -73,6 +73,14 @@ super + q
 #quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
+
+#focus selected desktop
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+#send node to the given desktop
+super + shift + {1-9,0}
+	id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
 
 #set the window state
 super + space
