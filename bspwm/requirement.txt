@@ -9,3 +9,5 @@ xorg-xkill
 scrot
 pcmanfm
 rofi
+polkit
+polkit-gnome
