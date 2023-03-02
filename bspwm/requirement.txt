@@ -11,3 +11,4 @@ pcmanfm
 rofi
 polkit
 polkit-gnome
+betterlockscreen
