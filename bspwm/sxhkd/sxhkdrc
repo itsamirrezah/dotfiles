@@ -98,9 +98,9 @@ super + s
 super + m
 	bspc desktop -l next
 
-#swap current node and biggest window
+#set master window (swap current node and biggest window in the current desktop)
 super + g
-	bspc node -s biggest.window
+	bspc node -s biggest.window.local
 
 #set the node flags
 super + ctrl + {m,x,y,z,h}
