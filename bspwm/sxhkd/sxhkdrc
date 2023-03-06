@@ -170,9 +170,6 @@ super + ctrl + {h,j,k,l}
 super + ctrl + {_,shift +}{1-9}
 	bspc node {_,@/} --presel-ratio 0.{1-9}
 
-super + button{4,5}
-  bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
-
 #prevent click on release (thank to Rafael Kitover answer: https://askubuntu.com/questions/178373/mouse-clicks-when-i-release-the-button/435004#435004)
 ~button3
   for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 0; done; \  
