@@ -1,5 +1,11 @@
+killByPortHandler () {
+	port=$1
+	kill -9 $(lsof -t -i:$port)
+}
+
 alias update="sudo pacman -Syu"
 alias updateAll="yay -Syu"
 alias packSortByDate="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort"
 alias packSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
-
+alias checkupdate="yay -Sy && yay -Qu"
+alias killByPort=killByPortHandler
