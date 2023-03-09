@@ -123,8 +123,12 @@ super + {o,i}
 	bspc wm -h off;bspc node {older,newer} -f;bspc wm -h on;
 
 #focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+super + Tab
+	bspc desktop -f last
+
+#focus the last node in the same desktop
+super + grave
+	bspc node -f last.local
 
 #focus/swap windows by direction
 super + {_,shift + }{h,j,k,l}
