@@ -1,6 +1,13 @@
-killByPortHandler () {
+killPortHandler () {
 	port=$1
 	kill -9 $(lsof -t -i:$port)
+}
+
+weatherHandler () {
+	city=$1
+	[ -z "$city" ] && city="sari"
+	curl https://wttr.in/$city
+	curl https://v2.wttr.in/$city
 }
 
 alias update="sudo pacman -Syu"
@@ -8,4 +15,5 @@ alias updateAll="yay -Syu"
 alias packSortByDate="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort"
 alias packSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
 alias checkupdate="yay -Sy && yay -Qu"
-alias killByPort=killByPortHandler
+alias killPort=killPortHandler
+alias weather=weatherHandler
