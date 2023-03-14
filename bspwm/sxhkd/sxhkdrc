@@ -50,14 +50,14 @@ XF86MonBrightnessDown
     xbacklight -dec 10
 
 
-#hide polybar
+#toggle polybar
 super + y
     polybar-msg cmd toggle
 
 
 #picom toggle
 ctrl + alt + o
-    ~/.config/bspwm/scripts/picom-toggle.sh
+    ~/.config/scripts/picom-toggle.sh
 
 #screenshot
 super + shift + p
@@ -66,6 +66,7 @@ super + shift + p
 #change keyboard layout (persian,us)
 Caps_Lock
   {setxkbmap ir, setxkbmap us}
+
 #====================================================
 #BSPWM Management
 
