@@ -202,4 +202,4 @@ super + n
 
 #rofi
 super + d
-    ~/.config/bspwm/launcher/launcher.sh dark
+    ~/.config/bspwm/launcher/launcher.sh simple 

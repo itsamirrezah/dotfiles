@@ -21,7 +21,7 @@ nm-applet &
 blueberry-tray &
 
 #Notification
-dunst &
+dunst --conf ~/.config/dunst/dunstrc &
 
 #Pollybar
 $HOME/.config/bspwm/polybar/launch.sh &
