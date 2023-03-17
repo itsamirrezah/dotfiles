@@ -50,9 +50,9 @@ XF86MonBrightnessDown
     xbacklight -dec 10
 
 
-#toggle polybar
-super + y
-    polybar-msg cmd toggle
+#toggle/restart polybar
+super + {_,shift} y
+    polybar-msg cmd {toggle,restart}
 
 
 #picom toggle
@@ -67,6 +67,12 @@ super + shift + p
 Caps_Lock
   {setxkbmap ir, setxkbmap us}
 
+#prevent click on release (thank to Rafael Kitover answer: https://askubuntu.com/questions/178373/mouse-clicks-when-i-release-the-button/435004#435004)
+~button3
+  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 0; done; \  
+  xte 'mouseup 3' 'mousermove 0 -1'; \ 
+  sleep 0.01; \
+  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 1; done
 #====================================================
 #BSPWM Management
 
@@ -178,13 +184,6 @@ super + ctrl + {h,j,k,l}
 super + ctrl + {_,shift +}{1-9}
 	bspc node {_,@/} --presel-ratio 0.{1-9}
 
-#prevent click on release (thank to Rafael Kitover answer: https://askubuntu.com/questions/178373/mouse-clicks-when-i-release-the-button/435004#435004)
-~button3
-  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 0; done; \  
-  xte 'mouseup 3' 'mousermove 0 -1'; \ 
-  sleep 0.01; \
-  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 1; done
-
 #====================================================
 #Applications
 
@@ -192,9 +191,13 @@ super + ctrl + {_,shift +}{1-9}
 super + Return
     alacritty
 
-#Browser
+#Browser (work)
 super + w
    brave 
+
+#Browser (personal)
+super + shift + w
+  librewolf 
 
 #file manager
 super + n 
