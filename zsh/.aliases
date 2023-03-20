@@ -10,10 +10,23 @@ weatherHandler () {
 	curl https://v2.wttr.in/$city
 }
 
+#packages
+alias checkupdate="yay -Sy && yay -Qu"
 alias update="sudo pacman -Syu"
 alias updateAll="yay -Syu"
 alias packSortByDate="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort"
 alias packSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
-alias checkupdate="yay -Sy && yay -Qu"
+alias unlockPacman="sudo rm /var/lib/pacman/db.lck"
+alias cleanupPack='sudo pacman -Rns $(pacman -Qtdq)'
+
+#git
+alias lazyCommit="git add -A && git commit -m"
+
+#confirm before overwriting
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+#utilities 
 alias killPort=killPortHandler
 alias weather=weatherHandler
