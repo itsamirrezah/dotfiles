@@ -391,3 +391,7 @@ schemes:
       white:   '#282a2e'
 
 colors: *EricScheme
+
+key_bindings:
+  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+  - { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode }

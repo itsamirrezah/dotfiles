@@ -6,7 +6,7 @@ killPortHandler () {
 weatherHandler () {
 	city=$1
 	[ -z "$city" ] && city="sari"
-	curl https://wttr.in/$city
+	curl https://wttr.in/$city 
 	curl https://v2.wttr.in/$city
 }
 

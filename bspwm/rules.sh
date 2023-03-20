@@ -10,8 +10,8 @@ bspc rule -a Blueberry.py state=floating
 bspc rule -a Pavucontrol state=floating
 #==================================================
 # Desktop Rules
-bspc rule -a Brave-browser:*:Todoist desktop="^1" follow=on focus=on
 bspc rule -a Brave-browser desktop="^2" follow=on focus=on
+bspc rule -a Brave-browser:*:Todoist desktop="^1" follow=on focus=on
 bspc rule -a Code desktop="^3" follow=on focus=on
 bspc rule -a VSCodium desktop="^4" follow=on focus=on
 bspc rule -a discord desktop="^5" follow=on focus=on
