@@ -50,7 +50,6 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # context                 # user@host
     dir                       # current directory
-    vcs                       # git status
     # command_execution_time  # previous command duration
     # virtualenv              # python virtual environment
     prompt_char               # prompt symbol
@@ -58,9 +57,11 @@
 
   # Right prompt segments.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+    #status                    # exit code of the last command
     command_execution_time    # previous command duration
     virtualenv                # python virtual environment
     context                   # user@host
+    vcs                       # git status
     # time                    # current time
   )
 
@@ -188,6 +189,21 @@
 
 # Tell `p10k configure` which file it should overwrite.
 typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
+
+# Default current directory color.
+typeset -g POWERLEVEL9K_DIR_FOREGROUND=4
+# If directory is too long, shorten some of its segments to the shortest possible unique prefix. The shortened directory can be tab-completed to the original.
+typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+# Replace removed segment suffixes with this symbol.
+typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
+# Color of the shortened directory segments.
+#typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=4
+# Color of the anchor directory segments. Anchor segments are never shortened. The first segment is always an anchor.
+#typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=4
+#Shorten directory if it's longer than this even if there is space for it. The value can be either absolute (e.g., '80') or a percentage of terminal width
+typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=10
+# When `dir` segment is on the last prompt line, try to shorten it enough many columns for typing commands
+typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS=60
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'

@@ -23,9 +23,10 @@ alias cleanupPack='sudo pacman -Rns $(pacman -Qtdq)'
 alias lazyCommit="git add -A && git commit -m"
 
 #confirm before overwriting
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
+alias cat="bat"
 
 #utilities 
 alias killPort=killPortHandler
