@@ -1,13 +1,12 @@
-killPortHandler () {
+killPort() {
 	port=$1
 	kill -9 $(lsof -t -i:$port)
 }
 
-weatherHandler () {
+weather() {
 	city=$1
 	[ -z "$city" ] && city="sari"
 	curl https://wttr.in/$city 
-	curl https://v2.wttr.in/$city
 }
 
 #packages
@@ -21,13 +20,12 @@ alias cleanupPack='sudo pacman -Rns $(pacman -Qtdq)'
 
 #git
 alias lazyCommit="git add -A && git commit -m"
+alias docker="sudo docker"
 
 #confirm before overwriting
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 alias cat="bat"
+alias lsag="lsa | grep"
 
-#utilities 
-alias killPort=killPortHandler
-alias weather=weatherHandler

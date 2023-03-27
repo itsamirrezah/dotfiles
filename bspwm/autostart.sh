@@ -5,7 +5,7 @@
 #sh ~/.screenlayout/monitor.sh &
 
 #Picom Configuration
-picom --config $HOME/.config/bspwm/picom.conf &
+picom --config $HOME/.config/picom/picom.conf &
 
 #Dex Autostart
 dex -a -s /etc/xdg/autostart:~/.config/autostart/ &
@@ -24,7 +24,7 @@ blueberry-tray &
 dunst --conf ~/.config/dunst/dunstrc &
 
 #Pollybar
-$HOME/.config/bspwm/polybar/launch.sh &
+$HOME/.config/polybar/launch.sh &
 
 #Keyboard Configuration
 sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &

@@ -113,7 +113,7 @@ super + g
 	bspc node -s biggest.window.local
 
 #set the node flags
-super + ctrl + {m,x,y,z,h}
+super + ctrl + {z,x,c,v,b}
 	bspc node -g {marked, locked, sticky, private,hidden}
 
 #unhidden any hidden nodes
@@ -205,4 +205,4 @@ super + n
 
 #rofi
 super + d
-    ~/.config/bspwm/launcher/launcher.sh simple 
+    ~/.config/rofi/launcher.sh simple 
