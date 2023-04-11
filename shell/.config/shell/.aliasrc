@@ -18,14 +18,20 @@ alias packSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print
 alias unlockPacman="sudo rm /var/lib/pacman/db.lck"
 alias cleanupPack='sudo pacman -Rns $(pacman -Qtdq)'
 
-#git
+#dev
 alias lazyCommit="git add -A && git commit -m"
+alias grhf="git checkout HEAD --"
 alias docker="sudo docker"
 
-#confirm before overwriting
+#utils
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 alias cat="bat"
 alias lsag="lsa | grep"
-
+alias tree="tree --gitignore"
+alias sxhkdrc="vim $HOME/.config/bspwm/sxhkd/sxhkdrc"
+alias jcal="jcal -e"
+alias lsag="lsa | grep"
+alias alsg="alias | grep"
+alias cpfc="xclip -sel clip <"
