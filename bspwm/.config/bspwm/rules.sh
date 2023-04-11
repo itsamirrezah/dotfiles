@@ -6,8 +6,6 @@ bspc rule -a Nitrogen state=floating
 bspc rule -a rofi state=floating sticky=on
 bspc rule -a feh state=floating
 bspc rule -a Galculator state=floating
-bspc rule -a Blueberry.py state=floating
-bspc rule -a Pavucontrol state=floating
 #==================================================
 # Desktop Rules
 bspc rule -a Brave-browser desktop="^2" follow=on focus=on
@@ -24,4 +22,6 @@ bspc rule -a LibreWolf desktop="^6" follow=on focus=on
 bspc rule -a streamlink-twitch-gui desktop="^6" follow=on focus=on
 bspc rule -a qBittorrent desktop="^7" follow=on focus=on
 bspc rule -a Brave-browser:*:Spotify desktop="^7" follow=on focus=on
+bspc rule -a Blueberry.py state=floating desktop="^7" follow=on focus=on layer=below
+bspc rule -a Pavucontrol state=floating desktop="^7" follow=on focus=on layer=below
 bspc rule -a Windscribe2 state=floating desktop="^7" border=off layer=below

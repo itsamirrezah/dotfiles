@@ -22,7 +22,7 @@ bspc config pointer_action1 move;
 bspc config pointer_action1 move;
 bspc config pointer_action3 resize_corner;
 bspc config remove_disabled_monitors true;
-bspc config merge_overlapping_monitors true;
+#bspc config merge_overlapping_monitors true;
 #bspc config top_padding 23;
 #bspc config border_radius 18;
 #bspc config bottom_padding 10;
