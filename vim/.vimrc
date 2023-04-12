@@ -9,6 +9,7 @@ Plug 'prettier/vim-prettier'
 Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 "basic config
@@ -30,7 +31,7 @@ set splitbelow splitright
 let ayucolor="dark"
 colorscheme ayu
 
-#leader
+"leader
 let mapleader = " "
 nnoremap <leader><CR> :so ~/.vimrc<CR>
 
