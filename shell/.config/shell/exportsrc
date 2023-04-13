@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+export EDITOR=vim
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
