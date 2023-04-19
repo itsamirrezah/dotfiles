@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 killPort() {
 	port=$1
 	kill -9 $(lsof -t -i:$port)
@@ -28,12 +30,14 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 alias cat="bat"
+alias grep="grep -i"
 alias lsag="lsa | grep"
 alias tree="tree --gitignore"
 alias jcal="jcal -e"
 alias lsag="lsa | grep"
 alias alsg="alias | grep"
 alias cpc="xclip -sel clip <"
+alias wts="watson"
 alias wtss="watson status"
 alias wtsa="watson aggregate"
 alias wtsr="watson report"
@@ -43,6 +47,7 @@ alias wtsrr="watson restart"
 alias wtsc="watson cancel"
 alias stowh="stow -t $HOME"
 alias unstowh="stow -D -t $HOME"
+alias vim="nvim"
 
 #configs
 alias sxhkdrc="vim $HOME/.config/bspwm/sxhkd/sxhkdrc"
@@ -52,3 +57,4 @@ alias bspwmrc="vim $HOME/.config/bspwm"
 alias tmuxrc="vim $HOME/.config/tmux/tmux.conf" 
 alias zshrc="vim $HOME/.zshrc"
 alias vimrc="vim $HOME/.vimrc"
+alias nvimrc="vim $HOME/.config/nvim"
