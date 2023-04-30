@@ -1,10 +1,6 @@
 require('nvim-treesitter.configs').setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "javascript","tsx", "typescript", "python", "vim", "vimdoc", "query", "css" },
-  -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = false,
 
   highlight = {
@@ -24,9 +20,8 @@ require('nvim-treesitter.configs').setup {
   textobjects = {
     select = {
       enable = true,
-      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
       keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
         ['aa'] = '@parameter.outer',
         ['ia'] = '@parameter.inner',
         ['af'] = '@function.outer',
@@ -37,7 +32,7 @@ require('nvim-treesitter.configs').setup {
     },
     move = {
       enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
+      set_jumps = true,
       goto_next_start = {
         [']m'] = '@function.outer',
         [']]'] = '@class.outer',

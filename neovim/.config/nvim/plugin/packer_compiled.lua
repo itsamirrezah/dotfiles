@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/meursault/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/meursault/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/meursault/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -153,6 +158,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/meursault/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/home/meursault/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-sleuth"] = {
+    loaded = true,
+    path = "/home/meursault/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+    url = "https://github.com/tpope/vim-sleuth"
   },
   ["which-key.nvim"] = {
     loaded = true,
