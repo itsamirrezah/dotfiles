@@ -1,3 +1,4 @@
+require("neodev").setup({})
 require("neoconf").setup({})
 
 local lsp = require('lsp-zero').preset({})

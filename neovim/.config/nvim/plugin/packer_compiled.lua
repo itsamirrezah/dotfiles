@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/meursault/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/meursault/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/meursault/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/meursault/.local/share/nvim/site/pack/packer/start/neoconf.nvim",
     url = "https://github.com/folke/neoconf.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/meursault/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -173,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/meursault/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/meursault/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
