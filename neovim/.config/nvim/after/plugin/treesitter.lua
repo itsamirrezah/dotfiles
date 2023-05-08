@@ -1,7 +1,7 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "javascript","tsx", "typescript", "python", "vim", "vimdoc", "query", "css" },
+  ensure_installed = { "javascript","tsx", "typescript", "python", "vim", "vimdoc", "query", "css", "prisma" },
   sync_install = false,
-  auto_install = false,
+  auto_install = true,
 
   highlight = {
     enable = true,

@@ -26,6 +26,9 @@ alias lazyCommit="git add -A && git commit -m"
 alias grhf="git checkout HEAD --"
 alias gv="git mv"
 alias docker="sudo docker"
+alias nps="npm start"
+alias npd="npm run dev"
+alias npsd="npm run start:dev"
 
 #utils
 alias :wq!="exit"
