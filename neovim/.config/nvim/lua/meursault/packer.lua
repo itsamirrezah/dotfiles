@@ -31,4 +31,5 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'folke/zen-mode.nvim'
+    use 'github/copilot.vim'
 end)
