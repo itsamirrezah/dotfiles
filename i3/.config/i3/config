@@ -11,6 +11,9 @@ exec dex -a -s /etc/xdg/autostart:~/.config/autostart/
 exec picom --config $HOME/.config/picom/picom.conf
 exec dunst --conf ~/.config/dunst/dunstrc
 exec --no-startup-id nm-applet
+exec --no-startup-id blueberry-tray
+exec nitrogen --restore
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 #not working; could not grab the cursor
 bindsym $mod+Escape exec xkill
@@ -72,6 +75,8 @@ bindsym $mod+Control+b mark _hidden; move scratchpad
 bindsym $mod+Shift+grave scratchpad show
 #todo: change between last two fullscreen node
 bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+w exec brave
@@ -79,17 +84,22 @@ bindsym $mod+Shift+w exec librewolf
 bindsym $mod+n exec pcmanfm
 bindsym $mod+d exec ~/.config/rofi/launcher.sh simple
 
+assign [title="Spotify"] $ws8
+assign [class="Brave-browser"] $ws2
+assign [class="Code"] $ws3
+assign [class="discord"] $ws5
+assign [class="TelegramDesktop"] $ws5
+assign [class="thunderbird"] $ws5
+assign [class="Element"] $ws5
+assign [class="obsidian"] $ws6
+assign [class="LibreWolf"] $ws6
+assign [class="Pcmanfm"] $ws6
+assign [class="streamlink-twitch-gui"] $ws6
+assign [class="qBittorrent"] $ws8
+assign [class="Blueberry.py"] $ws8
+assign [class="Pavucontrol"] $ws8
+assign [class="Windscribe2"] $ws8
 
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-
-# focus the parent container
 bindsym $mod+a focus parent
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
@@ -112,5 +122,5 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command i3status
+        # status_command i3status
 }
