@@ -84,21 +84,21 @@ bindsym $mod+Shift+w exec librewolf
 bindsym $mod+n exec pcmanfm
 bindsym $mod+d exec ~/.config/rofi/launcher.sh simple
 
-assign [title="Spotify"] $ws8
-assign [class="Brave-browser"] $ws2
-assign [class="Code"] $ws3
-assign [class="discord"] $ws5
-assign [class="TelegramDesktop"] $ws5
-assign [class="thunderbird"] $ws5
-assign [class="Element"] $ws5
-assign [class="obsidian"] $ws6
-assign [class="LibreWolf"] $ws6
-assign [class="Pcmanfm"] $ws6
-assign [class="streamlink-twitch-gui"] $ws6
-assign [class="qBittorrent"] $ws8
-assign [class="Blueberry.py"] $ws8
-assign [class="Pavucontrol"] $ws8
-assign [class="Windscribe2"] $ws8
+for_window [class="Brave-browser"] move container to workspace $ws2,focus
+for_window [class="Code"] move container to workspace $ws3,focus
+for_window [class="discord"] move container to workspace $ws5,focus
+for_window [class="TelegramDesktop"] move container to workspace $ws5,focus
+for_window [class="thunderbird"] move container to workspace $ws5,focus
+for_window [class="Element"] move container to workspace $ws5,focus
+for_window [class="obsidian"] move container to workspace $ws6,focus
+for_window [class="LibreWolf"] move container to workspace $ws6,focus
+for_window [class="Pcmanfm"] move container to workspace $ws6,focus
+for_window [class="streamlink-twitch-gui"] move container to workspace $ws6,focus
+for_window [class="Brave-browser" title="Spotify"] move container to workspace $ws8,focus
+for_window [class="qBittorrent"] move container to workspace $ws8,focus
+for_window [class="Blueberry.py"] move container to workspace $ws8,focus, floating enable
+for_window [class="Pavucontrol"] move container to workspace $ws8,focus, floating enable
+for_window [class="Windscribe2"] move container to workspace $ws8, floating enable
 
 bindsym $mod+a focus parent
 mode "resize" {
