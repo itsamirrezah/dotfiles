@@ -57,7 +57,7 @@ super + {_,shift} y
 
 #picom toggle
 ctrl + alt + o
-    ~/.config/scripts/picom-toggle.sh
+    ~/.local/bin/picom-toggle.sh
 
 #screenshot
 super + shift + p

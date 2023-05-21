@@ -1,0 +1,25 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "memory"
+order += "disk /"
+order += "tztime local"
+
+tztime local {
+        format = "%a, %m-%d %H:%M"
+}
+
+disk "/" {
+        format = "%avail"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
