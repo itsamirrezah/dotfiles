@@ -2,7 +2,7 @@
 set $mod Mod4
 default_border pixel 2
 gaps inner 2 
-gaps outer 2 
+gaps outer 0
 font pango:JetBrains Mono Nerd Font 8
 floating_modifier $mod
 
@@ -14,6 +14,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueberry-tray
 exec nitrogen --restore
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#change keyboard layout via capslock
+exec_always setxkbmap -layout us,ir 
+exec_always "setxkbmap -option 'grp:caps_toggle'"
 
 #keybinding: system management
 bindsym --release $mod+Escape exec xkill
@@ -22,7 +25,6 @@ bindsym Control+Mod1+p exec sleep 0.25s && scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-
 bindsym Control+Mod1+o exec ~/.local/bin/picom-toggle.sh
 
 #keybinding: i3
-
 #reload, restart and exit from i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -94,6 +96,7 @@ bindsym $mod+d exec ~/.config/rofi/launcher.sh simple
 
 #rules
 for_window [class="Brave-browser"] move container to workspace $ws2, focus
+for_window [class="Brave-browser" title="^Todoist$"] move container to workspace $ws1, focus
 for_window [class="Alacritty" title="tmux"] move container to workspace $ws3, focus
 for_window [class="Code"] move container to workspace $ws3, focus
 for_window [class="discord"] move container to workspace $ws5, focus
