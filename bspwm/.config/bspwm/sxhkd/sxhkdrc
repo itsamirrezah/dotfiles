@@ -64,15 +64,15 @@ super + shift + p
     sleep 0.25s && scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' && dunstify "screenshot!" -u normal;
 
 #change keyboard layout (persian,us)
-Caps_Lock
-  {setxkbmap ir, setxkbmap us}
+# Caps_Lock
+#   {setxkbmap ir, setxkbmap us}
 
 #prevent click on release (thank to Rafael Kitover answer: https://askubuntu.com/questions/178373/mouse-clicks-when-i-release-the-button/435004#435004)
-~button3
-  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 0; done; \  
-  xte 'mouseup 3' 'mousermove 0 -1'; \ 
-  sleep 0.01; \
-  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 1; done
+# ~button3
+#   for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 0; done; \  
+#   xte 'mouseup 3' 'mousermove 0 -1'; \ 
+#   sleep 0.01; \
+#   for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 1; done
 #====================================================
 #BSPWM Management
 

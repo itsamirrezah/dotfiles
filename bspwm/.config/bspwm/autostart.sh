@@ -31,3 +31,7 @@ sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
 #Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+#Keyboad Layout
+setxkbmap -layout us,ir
+setxkbmap -option 'grp:caps_toggle'
