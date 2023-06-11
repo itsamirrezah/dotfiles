@@ -3,7 +3,7 @@ set $mod Mod4
 default_border pixel 2
 gaps inner 2 
 gaps outer 0
-font pango:JetBrains Mono Nerd Font 8
+font pango:JetBrains Mono Nerd Font 9 
 floating_modifier $mod
 
 # auto startup
@@ -12,17 +12,27 @@ exec picom --config $HOME/.config/picom/picom.conf
 exec dunst --conf ~/.config/dunst/dunstrc
 exec --no-startup-id nm-applet
 exec --no-startup-id blueberry-tray
+exec --no-startup-id volumeicon
 exec nitrogen --restore
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #change keyboard layout via capslock
 exec_always setxkbmap -layout us,ir 
-exec_always "setxkbmap -option 'grp:caps_toggle'"
+exec_always setxkbmap -option 'grp:caps_toggle'
 
 #keybinding: system management
 bindsym --release $mod+Escape exec xkill
 bindsym $mod+Mod1+b exec betterlockscreen -l --off 500
 bindsym Control+Mod1+p exec sleep 0.25s && scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' && dunstify "screenshot!" -u normal
 bindsym Control+Mod1+o exec ~/.local/bin/picom-toggle.sh
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 10%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 10%-
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 #keybinding: i3
 #reload, restart and exit from i3
