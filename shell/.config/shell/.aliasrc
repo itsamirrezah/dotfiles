@@ -39,6 +39,7 @@ alias dspa='docker stop $(docker ps -q)'
 alias dclean='dspa && drma'
 alias docker-compose="sudo docker-compose"
 alias dcup="docker-compose up -d"
+alias dcdown="docker-compose down"
 alias nps="npm start"
 alias npd="npm run dev"
 alias npsd="npm run start:dev"
