@@ -10,7 +10,10 @@ bspc rule -a Galculator state=floating
 # Desktop Rules
 bspc rule -a Brave-browser desktop="^2" follow=on focus=on
 bspc rule -a Brave-browser:*:Todoist desktop="^1" follow=on focus=on
+bspc rule -a Brave-browser:*:Linear desktop="^1" follow=on focus=on
 bspc rule -a Code desktop="^3" follow=on focus=on
+bspc rule -a Brave-browser:*:Excalidraw desktop="^4" follow=on focus=on
+bspc rule -a Brave-browser:*:CodeSandbox desktop="^4" follow=on focus=on
 bspc rule -a discord desktop="^5" follow=on focus=on
 bspc rule -a TelegramDesktop desktop="^5" follow=on focus=on
 bspc rule -a thunderbird desktop="^5" follow=on focus=on

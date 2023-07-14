@@ -2,7 +2,9 @@
 
 #Arandr
 #NOTE: Save your configuration via arandr into ~/.screenlayout/monitor.sh
-#sh ~/.screenlayout/monitor.sh &
+if [[ -f ~/.screenlayout/monitor.sh ]]; then
+    sh ~/.screenlayout/monitor.sh &
+fi
 
 #Picom Configuration
 picom --config $HOME/.config/picom/picom.conf &
