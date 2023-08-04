@@ -32,5 +32,6 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
     use 'folke/zen-mode.nvim'
     use 'folke/trouble.nvim'
+    use 'tpope/vim-fugitive'
     -- use 'github/copilot.vim'
 end)
