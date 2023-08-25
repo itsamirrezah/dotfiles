@@ -1,0 +1,41 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.autohint: true
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcdfilter
+
+XTerm*renderFont: true
+XTerm*faceName: xft:JetBrains Mono Nerd Font:14=Bold
+XTerm*faceSize: 12
+XTerm*boldFont: JetBrains Mono Nerd Font:style=Bold
+XTerm*italicFont: JetBrains Mono Nerd Font:style=MediumItalic
+XTerm*boldItalicFont: JetBrains Mono Nerd Font:style=BoldItalic
+XTerm*utf8: 2
+XTerm*locale: true
+
+XTerm.vt100.translations: #override \n\
+  Ctrl <Key> -: smaller-vt-font() \n\
+  Ctrl <Key> =: larger-vt-font()
+
+XTerm*savelines: 1000 
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*background: #11121D
+XTerm*foreground: #a9b1d6
+XTerm*cursorColor: #bbc2cf
+XTerm*color0: #32344a
+XTerm*color1: #f7768e
+XTerm*color2: #9ece6a
+XTerm*color3: #e0af68
+XTerm*color4: #7aa2f7
+XTerm*color5: #ad8ee6
+XTerm*color6: #449dab
+XTerm*color7: #787c99
+XTerm*color8: #444b6a
+XTerm*color9: #ff7a93
+XTerm*color10: #b9f27c
+XTerm*color11: #ff9e64
+XTerm*color12: #7da6ff
+XTerm*color13: #bb9af7
+XTerm*color14: #0db9d7
+XTerm*color15: #acb0d0

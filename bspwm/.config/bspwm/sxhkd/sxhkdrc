@@ -189,7 +189,7 @@ super + ctrl + {_,shift +}{1-9}
 
 #terminal
 super + Return
-    alacritty
+    xterm
 
 #Browser (work)
 super + w
