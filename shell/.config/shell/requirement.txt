@@ -1,0 +1,10 @@
+lsof
+curl
+yay-bin
+reflector
+docker
+docker-compose
+bat
+stow
+openssl
+fzf
