@@ -13,3 +13,8 @@ polkit
 polkit-gnome
 betterlockscreen
 dunst
+feh
+xorg-xkill
+playerctl
+xorg-xbacklight
+xterm
