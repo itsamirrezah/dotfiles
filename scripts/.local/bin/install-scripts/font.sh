@@ -1,0 +1,2 @@
+sudo pacman -S ttf-fira-code ttf-firacode-nerd ttf-jetbrains-mono-nerd awesome-terminal-fonts
+yay -S vazirmatn-fonts
