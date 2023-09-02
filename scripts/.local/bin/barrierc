@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+killall -q barrierc
+barrierc -f --name $(hostnamectl --static) --disable-crypto --daemon bserver:25800

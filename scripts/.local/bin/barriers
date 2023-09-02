@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+killall -q barriers
+barriers --daemon --no-tray --name $(hostnamectl --static) --disable-crypto --disable-client-cert-checking -c $HOME/.config/barriers.conf --address :25800
