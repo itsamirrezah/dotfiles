@@ -18,3 +18,4 @@ xorg-xkill
 playerctl
 xorg-xbacklight
 xterm
+galculator

@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+#network
+sudo pacman -S openssh samba
+sudo systemctl start openssh
+sudo systemctl enable openssh
+
+#browsers
+sudo pacman -S brave-bin firefox-developer-edition librewolf-bin firefox
+
+#note
+pacman -S cherrytree obsidian
+
+#email, messengers, etc.
+pacman -S discord element-desktop thunderbird telegram-desktop 
+yay -S streamlink-twitch-gui-bin
+
+#utils
+sudo pacman -S foliate gimp mpv obs-studio vlc gimp
+
+#chess
+pacman -S stockfish
+yay -S scid_vs_pc

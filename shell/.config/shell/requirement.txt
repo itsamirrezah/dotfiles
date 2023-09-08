@@ -9,3 +9,10 @@ stow
 openssl
 fzf
 xclip
+git-delta
+httpie
+jq
+jcal
+tree
+tldr
+zip

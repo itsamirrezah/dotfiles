@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 #fnm
 curl -fsSL https://fnm.vercel.app/install | bash
 
@@ -5,12 +7,17 @@ curl -fsSL https://fnm.vercel.app/install | bash
 sudo pacman -S docker docker-compose
 sudo systemctl enable docker.service
 sudo systemctl enable docker.socket
+sudo docker pull postgres 
+sudo docker pull mongo 
+sudo docker pull redis 
 
-
-#nvim
+#nvim, tmux
 sudo pacman -S neovim tmux
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-sudo pacman visual-studio-code-bin intellij-idea-community-edition
+#vscode, intellij 
+sudo pacman visual-studio-code-bin intellij-idea-community-edition github-desktop-bin
 
+#aur
+yay -S insomnia-bin runjs-bin postman-bin
