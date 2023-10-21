@@ -1,7 +1,7 @@
 require("lualine").setup({
       options = {
         icons_enabled = false,
-        theme = 'ayu_mirage',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },

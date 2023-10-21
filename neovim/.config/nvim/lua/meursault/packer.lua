@@ -1,37 +1,45 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    use 'folke/which-key.nvim'
-    use 'folke/neoconf.nvim'
-    use 'folke/neodev.nvim'
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        requires = {
-            { 'neovim/nvim-lspconfig' },
-            {
-                'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            { 'williamboman/mason-lspconfig.nvim' },
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' },
-        }
-    }
-    use { 'rose-pine/neovim', as = 'rose-pine' }
-    use 'nvim-lualine/lualine.nvim'
-    use 'numToStr/Comment.nvim'
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { 'nvim-lua/plenary.nvim' } }
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use 'lewis6991/gitsigns.nvim'
+    use 'tpope/vim-fugitive'
     use 'tpope/vim-sleuth'
+    use 'folke/which-key.nvim'
+    use 'lewis6991/gitsigns.nvim'
+    use 'nvim-lualine/lualine.nvim'
+    use {'lukas-reineke/indent-blankline.nvim'}
+    use 'numToStr/Comment.nvim'
+    use { 'rose-pine/neovim', as = 'rose-pine' }
     use 'ThePrimeagen/harpoon'
     use 'mbbill/undotree'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'folke/zen-mode.nvim'
-    use 'folke/trouble.nvim'
-    use 'tpope/vim-fugitive'
-    -- use 'github/copilot.vim'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        { run = ':TSUpdate' },
+        require= {
+          'nvim-treesitter/nvim-treesitter-textobjects'
+        }
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.4',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                run = "make",
+            }
+        }
+    }
+    use {
+        'neovim/nvim-lspconfig',
+        requires = {
+          'williamboman/mason.nvim',
+          'williamboman/mason-lspconfig.nvim',
+          { 'j-hui/fidget.nvim', opts = true },
+          'folke/neodev.nvim',
+          'hrsh7th/nvim-cmp',
+          'hrsh7th/cmp-nvim-lsp',
+          'L3MON4D3/LuaSnip',
+          'saadparwaiz1/cmp_luasnip',
+          'rafamadriz/friendly-snippets',
+        }
+    }
 end)
