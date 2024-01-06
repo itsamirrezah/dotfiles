@@ -102,7 +102,7 @@ super + f
 
 #toggle pseudo tiling of window
 super + s 
-	bspc node --state \~pseudo_tiled
+	bspc node --state \~floating
 
 #toggle monacle/tiled
 super + m
@@ -189,7 +189,7 @@ super + ctrl + {_,shift +}{1-9}
 
 #terminal
 super + Return
-    xterm
+    alacritty
 
 #Browser (work)
 super + w

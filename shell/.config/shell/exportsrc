@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 export EDITOR=nvim
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 # fnm
 export PATH="/home/meursault/.local/share/fnm:$PATH"
 eval "`fnm env`"
