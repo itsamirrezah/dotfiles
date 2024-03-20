@@ -1,0 +1,154 @@
+# Default config for sway
+# Copy this to ~/.config/sway/config and edit it to your liking.
+# Read `man 5 sway` for a complete reference.
+
+font pango:JetBrains Mono Nerd Font 9 
+default_border pixel 2
+#variables
+set $mod Mod4
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty 
+
+floating_modifier $mod normal
+#auto startup
+exec dex -a -s /etc/xdg/autostart:~/.config/autostart/
+output * background ~/Documents/p/wallpapers/wallhaven-wyll8r.png fill
+
+#keybinding: system management
+bindsym $mod+Mod1+b exec swaylock -f -c 000000
+bindsym Control+Mod1+p exec scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg'
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 10%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 10%-
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+
+#keybinding: i3
+#reload, restart and exit from i3
+bindsym $mod+Shift+r reload
+# bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+q kill
+
+#workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $ws1;
+bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number $ws2;
+bindsym $mod+Shift+3 move container to workspace number $ws3; workspace number $ws3;
+bindsym $mod+Shift+4 move container to workspace number $ws4; workspace number $ws4;
+bindsym $mod+Shift+5 move container to workspace number $ws5; workspace number $ws5;
+bindsym $mod+Shift+6 move container to workspace number $ws6; workspace number $ws6;
+bindsym $mod+Shift+7 move container to workspace number $ws7; workspace number $ws7;
+bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $ws8;
+#change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+grave focus prev
+bindsym $mod+Shift+grave focus next 
+bindsym $mod+a focus parent
+#move focused windows
+bindsym $mod+shift+$left move left
+bindsym $mod+shift+$down move down
+bindsym $mod+shift+$up move up
+bindsym $mod+shift+$right move right
+#change layouts
+bindsym $mod+f fullscreen toggle
+bindsym $mod+m layout tabbed
+bindsym $mod+Shift+m layout stacking
+bindsym $mod+t layout default 
+bindsym $mod+Shift+space floating toggle
+# bindsym $mod+e layout toggle split #duplicate
+bindsym $mod+b splith
+bindsym $mod+v splitv
+workspace_layout tabbed
+workspace_auto_back_and_forth no
+# bindsym $mod+space focus mode_toggle
+#float & sticky
+bindsym Mod1+Shift+space floating toggle sticky toggle
+bindsym $mod+space layout toggle 
+#hidden & unhidden
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+#move between workspaces
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev 
+
+#applications
+bindsym $mod+Return exec $term 
+bindsym $mod+w exec firefox 
+bindsym $mod+Mod1+w exec chromium
+bindsym $mod+Shift+w exec firefox-developer-edition 
+bindsym $mod+e exec thunderbird
+bindsym $mod+n exec pcmanfm
+bindsym $mod+d exec ~/.config/rofi/launcher.sh simple
+
+#rules
+for_window {
+    [app_id="org.telegram.desktop"] move container to workspace $ws5, focus
+    [class="discord"] move container to workspace $ws5, focus
+    [class="thunderbird"] move container to workspace $ws5, focus
+    [class="Element"] move container to workspace $ws5, focus
+    [class="qBittorrent"] move container to workspace $ws8, focus
+    [app_id="Windscribe"] move container to workspace $ws8, floating enable
+    [class="streamlink-twitch-gui"] move container to workspace $ws6, focus
+    [app_id="galculator"] floating enable
+    [app_id="pavucontrol"] move container to workspace $ws8, focus, floating enable
+    [app_id="blueberry.py"] move container to workspace $ws8, focus, floating enable
+    [class="Brave-browser" title="Spotify"] move container to workspace $ws8, focus
+    [class="Pcmanfm"] move container to workspace $ws6, focus
+    [class="Code"] move container to workspace $ws3, focus
+    [class="Brave-browser"] move container to workspace $ws2, focus
+    [class="Brave-browser" title="^Todoist$"] move container to workspace $ws1, focus
+    [window_role="pop-up"] floating enable
+    [window_role="bubble"] floating enable
+    [window_role="dialog"] floating enable
+    [window_type="dialog"] floating enable
+}
+
+#keyboard
+input type:keyboard {
+  xkb_capslock disabled
+  xkb_numlock  enabled
+  xkb_layout   "us,ir"
+  xkb_options  "grp:caps_toggle"
+}
+
+mode "resize" {
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bar {
+    swaybar_command waybar
+}
+
+include @sysconfdir@/sway/config.d/*
