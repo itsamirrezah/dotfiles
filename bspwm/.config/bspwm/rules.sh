@@ -8,7 +8,6 @@ bspc rule -a feh state=floating
 bspc rule -a Galculator state=floating
 #==================================================
 # Desktop Rules
-bspc rule -a Brave-browser desktop="^2" follow=on focus=on
 bspc rule -a Brave-browser:*:Todoist desktop="^1" follow=on focus=on
 bspc rule -a Brave-browser:*:Linear desktop="^1" follow=on focus=on
 bspc rule -a Code desktop="^3" follow=on focus=on

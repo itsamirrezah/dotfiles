@@ -191,13 +191,21 @@ super + ctrl + {_,shift +}{1-9}
 super + Return
     alacritty
 
-#Browser (work)
+#Browser
 super + w
-   brave 
+   firefox
 
-#Browser (personal)
+#Browser
 super + shift + w
-  librewolf 
+  firefox-developer-edition 
+
+#Browser
+super + alt + w
+  chromium
+
+#Email client
+super + e
+  thunderbird
 
 #file manager
 super + n 

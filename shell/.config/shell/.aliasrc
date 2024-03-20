@@ -11,11 +11,11 @@ weather() {
 	curl https://wttr.in/$city 
 }
 
-#packages
 alias update="sudo pacman -Syu"
 alias updateAll="yay -Syu"
 alias checkupdate="yay -Sy && yay -Qu"
 alias pacSortByDate="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort"
+# alias pacSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
 alias pacSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
 alias pacUnlock="sudo rm /var/lib/pacman/db.lck"
 alias pacClean='sudo pacman -Rns $(pacman -Qtdq)'
@@ -25,6 +25,7 @@ alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
 
 #dev
+alias vim="nvim"
 alias gpa="git remote | xargs -L1 git push"
 alias lazyCommit="git add -A && git commit -m"
 alias grhf="git checkout HEAD --"
@@ -50,11 +51,11 @@ alias prim="prisma migrate dev --name"
 alias prist="prisma studio"
 
 #utils
-alias :wq!="exit"
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 alias cat="bat"
+alias lsa="ls -ltrha"
 alias lsag="lsa | grep -i"
 alias tree="tree --gitignore"
 alias jcal="jcal -e"
@@ -62,8 +63,8 @@ alias alsg="alias | grep -i"
 alias cpc="xclip -sel clip"
 alias stowh="stow -t $HOME"
 alias unstowh="stow -D -t $HOME"
-alias vim="nvim"
 alias randomHex="openssl rand -hex"
+alias randomBase="openssl rand -base64"
 
 #configs
 alias sxhkdrc="vim $HOME/.config/bspwm/sxhkd/sxhkdrc"
@@ -76,3 +77,4 @@ alias zshrc="vim $HOME/.zshrc"
 alias vimrc="vim $HOME/.vimrc"
 alias nvimrc="cd $HOME/.config/nvim && vim ."
 alias i3rc="vim ~/.config/i3/config"
+alias swayrc="vim ~/.config/sway/config"
