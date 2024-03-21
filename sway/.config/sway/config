@@ -23,14 +23,17 @@ set $term alacritty
 floating_modifier $mod normal
 #auto startup
 exec dex -a -s /etc/xdg/autostart:~/.config/autostart/
+exec swaync
+exec ~/.local/bin/back-and-forth-focus
+exec ~/.local/bin/auto-exit-fullscreen
 output * background ~/Documents/p/wallpapers/wallhaven-wyll8r.png fill
 
 #keybinding: system management
 bindsym $mod+Mod1+b exec swaylock -f -c 000000
-bindsym Control+Mod1+p exec scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg'
+bindsym Control+Mod1+p exec scrot ~/Pictures/'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' && notify-send "screenshot!" -u normal
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 10%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 10%-
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -38,9 +41,9 @@ bindsym XF86AudioStop exec playerctl stop
 
 #keybinding: i3
 #reload, restart and exit from i3
-bindsym $mod+Shift+r reload
-# bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Mod1+r reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Mod1+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+q kill
 
 #workspace
@@ -65,8 +68,7 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-bindsym $mod+grave focus prev
-bindsym $mod+Shift+grave focus next 
+bindsym $mod+grave [con_mark=_prev] focus
 bindsym $mod+a focus parent
 #move focused windows
 bindsym $mod+shift+$left move left
@@ -75,19 +77,15 @@ bindsym $mod+shift+$up move up
 bindsym $mod+shift+$right move right
 #change layouts
 bindsym $mod+f fullscreen toggle
+bindsym $mod+space layout toggle split stacking tabbed
 bindsym $mod+m layout tabbed
 bindsym $mod+Shift+m layout stacking
-bindsym $mod+t layout default 
-bindsym $mod+Shift+space floating toggle
-# bindsym $mod+e layout toggle split #duplicate
+bindsym $mod+t layout toggle split
+bindsym $mod+s floating toggle
 bindsym $mod+b splith
 bindsym $mod+v splitv
-workspace_layout tabbed
-workspace_auto_back_and_forth no
-# bindsym $mod+space focus mode_toggle
 #float & sticky
-bindsym Mod1+Shift+space floating toggle sticky toggle
-bindsym $mod+space layout toggle 
+bindsym $mod+Shift+s floating toggle, sticky toggle
 #hidden & unhidden
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show

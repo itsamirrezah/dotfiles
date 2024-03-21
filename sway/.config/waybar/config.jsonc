@@ -16,10 +16,11 @@
         "sway/window"
     ],
     "modules-right": [
+        "custom/weather",
+        "temperature",
         "mpd",
         "cpu",
         "memory",
-        "temperature",
         "backlight",
         "keyboard-state",
         "sway/language",
@@ -171,7 +172,7 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "mute",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -182,7 +183,9 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "scroll-step": 5,
+        "on-click-right": "pavucontrol",
+        "on-click": "amixer -D pulse set Master toggle",
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -195,5 +198,10 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/weather": {
+        "format": "{}",
+        "interval":3600,
+        "exec": "curl -s https://wttr.in/Sari?format='%t'"
     }
 }
