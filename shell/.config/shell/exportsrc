@@ -4,4 +4,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 # fnm
 export PATH="/home/meursault/.local/share/fnm:$PATH"
+export NPM_BIN="/home/meursault/.npm/bin"
+export PATH="$NPM_BIN:$PATH"
 eval "`fnm env`"

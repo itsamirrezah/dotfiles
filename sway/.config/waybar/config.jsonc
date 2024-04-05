@@ -16,19 +16,18 @@
         "sway/window"
     ],
     "modules-right": [
+        "clock",
         "custom/weather",
-        "temperature",
-        "mpd",
-        "cpu",
         "memory",
-        "backlight",
+        "cpu",
         "keyboard-state",
+        "pulseaudio",
         "sway/language",
+        "tray",
+        "mpd",
+        "backlight",
         "battery",
         "battery#bat2",
-        "clock",
-        "pulseaudio",
-        "tray"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -104,9 +103,10 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "format": "{:%a, %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%a, %d %b %Y, %H:%M:%S}",
+        "interval": 1,
     },
     "cpu": {
         "format": "{usage}% ",
