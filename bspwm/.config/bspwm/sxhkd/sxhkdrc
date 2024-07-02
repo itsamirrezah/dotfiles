@@ -11,7 +11,7 @@ super + shift + Escape
 
 #archlinux-logout
 super + alt + b
-     betterlockscreen -l --off 500
+     i3lock -c 000000 --show-failed-attempts & sleep 60s && xset dpms force off
 
 #raises volume
 XF86AudioRaiseVolume

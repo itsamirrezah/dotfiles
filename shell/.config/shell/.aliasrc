@@ -11,9 +11,11 @@ weather() {
 	curl https://wttr.in/$city 
 }
 
-alias update="sudo pacman -Syu"
-alias updateAll="yay -Syu"
-alias checkupdate="yay -Sy && yay -Qu"
+alias aptUpdate="sudo apt update && sudo apt upgrade"
+alias aptCheckUpdate="sudo apt update && apt list --upgradable"
+alias pacmanUpdate="sudo pacman -Syu"
+alias aurUpdate="yay -Syu"
+alias aurCheckUpdate="yay -Sy && yay -Qu"
 alias pacSortByDate="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort"
 alias pacSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
 alias pacSortBySize="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
@@ -27,11 +29,10 @@ alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pac
 #dev
 alias vim="nvim"
 alias gpa="git remote | xargs -L1 git push"
-alias lazyCommit="git add -A && git commit -m"
 alias grhf="git checkout HEAD --"
 alias gv="git mv"
 alias docker="sudo docker"
-alias dex="docker exec -it"
+alias dexec="docker exec -it"
 alias di="docker images"
 alias dps="docker ps"
 alias dlg="docker logs"
@@ -39,6 +40,7 @@ alias dpsa="docker ps --all"
 alias drma='docker rm $(docker ps -aq)'
 alias dspa='docker stop $(docker ps -q)'
 alias dclean='dspa && drma'
+alias ddd='docker image rm $(docker images -f "dangling=true" -q)'
 alias docker-compose="sudo docker-compose"
 alias dcup="docker-compose up -d"
 alias dcdown="docker-compose down"

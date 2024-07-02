@@ -17,7 +17,6 @@ bspc rule -a discord desktop="^5" follow=on focus=on
 bspc rule -a TelegramDesktop desktop="^5" follow=on focus=on
 bspc rule -a thunderbird desktop="^5" follow=on focus=on
 bspc rule -a Element desktop="^5" follow=on focus=on
-bspc rule -a Pcmanfm desktop="^6" follow=on focus=on
 bspc rule -a LibreWolf desktop="^6" follow=on focus=on
 bspc rule -a streamlink-twitch-gui desktop="^6" follow=on focus=on
 bspc rule -a qBittorrent desktop="^8" follow=on focus=on

@@ -10,7 +10,7 @@ fi
 picom --config $HOME/.config/picom/picom.conf &
 
 #Dex Autostart
-dex -a -s /etc/xdg/autostart:~/.config/autostart/ &
+# dex -a -s /etc/xdg/autostart:~/.config/autostart/ &
 
 #Cursor
 xsetroot -cursor_name left_ptr

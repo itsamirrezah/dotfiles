@@ -2,13 +2,13 @@
 
 selected=$(eval "find $(xargs < ~/.config/tmux/WORK_DIR) -mindepth 1 -maxdepth 1 -type d" | fzf)
 
-if [[ -z $selected ]]; then
+if [ -z $selected ]; then
     exit 0;
 fi
 
 selected_name=$(basename "$selected" | tr . -) ;
 
-if [[ -z $(pgrep tmux) ]]; then
+if [ -z $(pgrep tmux) ]; then
 	tmux new-session -s $selected_name -c $selected;
 	exit 0;
 fi

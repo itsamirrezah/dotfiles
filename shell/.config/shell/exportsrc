@@ -3,7 +3,10 @@ export EDITOR=nvim
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 # fnm
-export PATH="/home/meursault/.local/share/fnm:$PATH"
+export FNM_BIN="/home/meursault/.local/share/fnm"
 export NPM_BIN="/home/meursault/.npm/bin"
-export PATH="$NPM_BIN:$PATH"
+export GO_BIN="/opt/go/bin"
+export PATH="$FNM_BIN:$NPM_BIN:$GO_BIN:$PATH"
+
+export TERM="xterm-256color"
 eval "`fnm env`"
