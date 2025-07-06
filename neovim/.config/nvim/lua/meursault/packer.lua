@@ -43,4 +43,5 @@ return require('packer').startup(function(use)
         }
     }
     use 'Exafunction/codeium.vim'
+    use 'prettier/vim-prettier'
 end)

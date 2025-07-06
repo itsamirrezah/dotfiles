@@ -2,8 +2,7 @@
 
 killPort() {
 	port=$1
-	kill -9 $(lsof -t -i:$port)
-}
+	kill -9 $(lsof -t -i:$port) }
 
 weather() {
 	city=$1
@@ -31,6 +30,7 @@ alias vim="nvim"
 alias gpa="git remote | xargs -L1 git push"
 alias grhf="git checkout HEAD --"
 alias gv="git mv"
+alias gdfn="git diff --name-only"
 alias docker="sudo docker"
 alias dexec="docker exec -it"
 alias di="docker images"
@@ -52,6 +52,10 @@ alias prisma="npx prisma"
 alias prip="prisma db push"
 alias prim="prisma migrate dev --name"
 alias prist="prisma studio"
+alias supabase="sudo supabase"
+alias sups="supabase start"
+alias supsp="supabase stop"
+alias supst="supabase status"
 alias fakeSsl="openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate.crt"
 
 #utils
@@ -70,6 +74,11 @@ alias stowh="stow -t $HOME"
 alias unstowh="stow -D -t $HOME"
 alias randomHex="openssl rand -hex"
 alias randomBase="openssl rand -base64"
+alias prConnect="tail -n1 ~/o/.proton-list | xargs protonvpn-cli c"
+alias expc="expressvpn connect"
+alias expd="expressvpn disconnect"
+alias expsts="expressvpn status"
+alias whatismyip="curl ifconfig.io/country_code && curl ifconfig.io"
 
 #configs
 alias sxhkdrc="vim $HOME/.config/bspwm/sxhkd/sxhkdrc"

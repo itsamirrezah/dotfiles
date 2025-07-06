@@ -183,7 +183,7 @@ super + Return
 
 #Browser
 super + w
-   firefox
+   zen
 
 #Browser
 super + shift + w

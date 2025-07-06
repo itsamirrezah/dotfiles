@@ -37,4 +37,6 @@ sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 #Keyboad Layout
 setxkbmap -layout us,ir
 setxkbmap -option 'grp:caps_toggle'
+
+# Intellij's fix
 export _JAVA_AWT_WM_NONREPARENTING=1
