@@ -10,6 +10,19 @@ weather() {
 	curl https://wttr.in/$city 
 }
 
+cpc() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    pbcopy
+  elif [[ -n "$WAYLAND_DISPLAY" ]]; then
+    wl-copy
+  elif [[ -n "$DISPLAY" ]]; then
+    xclip -sel clip
+  else
+    echo "Unsupported platform or display server" >&2
+    return 1
+  fi
+}
+
 alias aptUpdate="sudo apt update && sudo apt upgrade"
 alias aptCheckUpdate="sudo apt update && apt list --upgradable"
 alias pacmanUpdate="sudo pacman -Syu"
@@ -31,7 +44,7 @@ alias gpa="git remote | xargs -L1 git push"
 alias grhf="git checkout HEAD --"
 alias gv="git mv"
 alias gdfn="git diff --name-only"
-alias docker="sudo docker"
+#alias docker="sudo docker"
 alias dexec="docker exec -it"
 alias di="docker images"
 alias dps="docker ps"
@@ -41,7 +54,7 @@ alias drma='docker rm $(docker ps -aq)'
 alias dspa='docker stop $(docker ps -q)'
 alias dclean='dspa && drma'
 alias ddd='docker image rm $(docker images -f "dangling=true" -q)'
-alias docker-compose="sudo docker-compose"
+# alias docker-compose="sudo docker-compose"
 alias dcup="docker-compose up -d"
 alias dcdown="docker-compose down"
 alias dcrestart="dcdown && dcup"
@@ -68,16 +81,17 @@ alias lsag="lsa | grep -i"
 alias tree="tree --gitignore"
 alias jcal="jcal -e"
 alias alsg="alias | grep -i"
-alias cpc="xclip -sel clip"
-alias wcpc="wl-copy"
+# alias cpc="xclip -sel clip"
+# alias wcpc="wl-copy"
+# alias mcpc="pbcopy"
 alias stowh="stow -t $HOME"
 alias unstowh="stow -D -t $HOME"
 alias randomHex="openssl rand -hex"
 alias randomBase="openssl rand -base64"
 alias prConnect="tail -n1 ~/o/.proton-list | xargs protonvpn-cli c"
-alias expc="expressvpn connect"
-alias expd="expressvpn disconnect"
-alias expsts="expressvpn status"
+# alias expc="expressvpn connect"
+# alias expd="expressvpn disconnect"
+# alias expsts="expressvpn status"
 alias whatismyip="curl ifconfig.io/country_code && curl ifconfig.io"
 
 #configs

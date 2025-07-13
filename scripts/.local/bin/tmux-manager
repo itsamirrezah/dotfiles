@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 selected=$(eval "find $(xargs < ~/.config/tmux/WORK_DIR) -mindepth 1 -maxdepth 1 -type d" | fzf)
 
