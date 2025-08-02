@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+pId=$(aerospace list-windows --focused --format "%{app-pid}")
+background=$(osascript -e 'tell application "System Events" to get unix id of every process whose background only is true' | grep $pId)
+count=$(aerospace list-windows --all --format "%{app-pid}" | grep ${pId} | wc -l)
+
+aerospace close
+
+if [ $count -eq 1 ] && [ -z $background ]; then
+	kill -9 $pId
+	exit 0
+fi

@@ -10,3 +10,8 @@ export PATH="$FNM_BIN:$NPM_BIN:$GO_BIN:$PATH"
 
 export TERM="xterm-256color"
 eval "`fnm env`"
+
+#android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
