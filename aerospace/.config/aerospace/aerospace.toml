@@ -170,6 +170,14 @@ automatically-unhide-macos-hidden-apps = true
     run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
-    if.app-id = 'ru.keepcoder.Telegram'
+    if.app-id = 'com.tdesktop.Telegram'
     run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Notes'
+    run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+    if.app-id = 'com.obsproject.obs-studio'
+    run = 'move-node-to-workspace 8'
 
